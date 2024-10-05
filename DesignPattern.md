@@ -1,4 +1,5 @@
 # Introduction to Design Patterns
+https://www.youtube.com/watch?v=tv-_1er1mWI
 
 - `Design patterns`: are reusable solutions to common problems that arise during software design and development. They provide proven practices and structures that can be applied in various contexts to improve code quality, maintainability, and scalability
 - `Benefits of using design patterns`:
@@ -14,6 +15,8 @@
   By using design patterns, developers can write more efficient, readable, and maintainable code while adhering to established industry standards and best practices.
 
 ## Module Pattern
+https://www.youtube.com/watch?v=pOfwp6VlnlM
+
 The `Module Pattern` in JavaScript is a popular design pattern that helps organize code and prevent global namespace pollution
 
 Key points:
@@ -39,6 +42,8 @@ module.publicMethod(); // Outputs: "I'm private!"
 ```
 
 ## Prototype Pattern
+https://youtu.be/tv-_1er1mWI?si=CNvGRXUVgX8XZ7Pv&t=144
+
 The `Prototype Pattern` is a creational design pattern in JavaScript that creates objects by cloning an existing object.
 
 Key points:
@@ -64,6 +69,8 @@ jane.sayHello(); // Outputs: Hello, my name is Jane
 ```
 
 ## Observer Pattern
+https://youtu.be/tv-_1er1mWI?si=Sg3LHw9tNut8tHz0&t=478
+
 The Observer Pattern is a behavioral design pattern that defines a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically.
 
 Key points:
@@ -72,48 +79,9 @@ Key points:
 - Allows objects to notify other objects about changes
 - Useful for implementing event-driven architectures
 
-Example implementation:
-
-```js
-class Subject {
-  constructor() {
-    this.observers = [];
-  }
-
-  attach(observer) {
-    this.observers.push(observer);
-  }
-
-  notify() {
-    this.observers.forEach((observer) => observer.update());
-  }
-}
-
-class Observer {
-  update() {}
-}
-
-class ConcreteSubject extends Subject {
-  setState(state) {
-    this.state = state;
-    this.notify();
-  }
-}
-
-class ConcreteObserver extends Observer {
-  update() {
-    console.log(`State changed to ${this.subject.state}`);
-  }
-}
-
-const subject = new ConcreteSubject();
-subject.attach(new ConcreteObserver());
-subject.setState("New state");
-```
-
-# Architectural Patterns
-
-## MVC (Model-View-Controller)
+## Architectural Patterns
+https://www.youtube.com/watch?v=I5c7fBgvkNY
+### MVC (Model-View-Controller)
 
 Key points:
 
@@ -122,54 +90,7 @@ Key points:
 - View handles the display of data
 - Controller manages the interactions between Model and View
 
-Example implementation:
-
-```js
-class Model {
-  constructor() {
-    this.data = "Some initial data";
-  }
-
-  getData() {
-    return this.data;
-  }
-
-  setData(newData) {
-    this.data = newData;
-  }
-}
-
-class View {
-  render(data) {
-    console.log(`Current data: ${data}`);
-  }
-}
-
-class Controller {
-  constructor(model, view) {
-    this.model = model;
-    this.view = view;
-  }
-
-  updateView() {
-    const data = this.model.getData();
-    this.view.render(data);
-  }
-
-  setData(newData) {
-    this.model.setData(newData);
-    this.updateView();
-  }
-}
-
-const model = new Model();
-const view = new View();
-const controller = new Controller(model, view);
-
-controller.setData("Updated data");
-```
-
-## MVVM (Model-View-ViewModel)
+### MVVM (Model-View-ViewModel)
 
 Key points:
 
@@ -177,15 +98,8 @@ Key points:
 - ViewModel acts as an intermediary between View and Model
 - View binds to ViewModel properties and commands
 
-Example implementation (using KnockoutJS):
-
-<!-- TODO: Add example -->
-
-```js
-
-```
-
 ## Singleton Pattern
+https://youtu.be/tv-_1er1mWI?si=rOjAcNR0oW432fjF&t=93
 
 Key points:
 
